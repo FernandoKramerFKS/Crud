@@ -1,4 +1,4 @@
-package com.kramer.crud.utilidades;
+package com.kramer.crud.utilidade;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.kramer.crud.entities.Endereco;
+import com.kramer.crud.entidade.Endereco;
 
 public class ViaCep {
 

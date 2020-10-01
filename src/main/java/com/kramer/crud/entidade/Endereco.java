@@ -1,8 +1,10 @@
-package com.kramer.crud.entities;
+package com.kramer.crud.entidade;
+
+import com.kramer.crud.utilidade.ViaCep;
 
 public class Endereco {
-	
-	private long id;
+
+	private Integer id;
 	private String pais;
 	private String iso;
 	private String estado;
@@ -10,20 +12,20 @@ public class Endereco {
 	private String cidade;
 	private String bairro;
 	private String rua;
-	private String cep;
 	private Integer numero;
 	private String complemento;
 	private String observacao;
-	
+	private String cep;
+
 	public Endereco() {
-		
+
 	}
 
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -83,14 +85,6 @@ public class Endereco {
 		this.rua = rua;
 	}
 
-	public String getCep() {
-		return cep;
-	}
-
-	public void setCep(String cep) {
-		this.cep = cep;
-	}
-
 	public Integer getNumero() {
 		return numero;
 	}
@@ -115,5 +109,21 @@ public class Endereco {
 		this.observacao = observacao;
 	}
 
+	public String getCep() {
+		return cep;
+	}
+
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
+
+	public Endereco buscarCep(Endereco ende) {
+		Endereco end = ViaCep.buscarCep(ende.getCep());
+		end.setNumero(ende.getNumero());
+		end.setComplemento(ende.getComplemento());
+		end.setObservacao(ende.getObservacao());
+		return end;
+
+	}
 
 }

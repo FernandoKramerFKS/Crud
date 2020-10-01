@@ -1,13 +1,16 @@
-package com.kramer.crud.entities;
+package com.kramer.crud.entidade;
 
-public class PessoaFisica extends Pessoa {
+import java.sql.Date;
+
+public class PessoaFisica extends Pessoa{
 
 	private String sexo;
 	private String cpf;
 	private String rg;
+	private Date dataNascimento;
 	
 	public PessoaFisica() {
-
+	
 	}
 
 	public String getSexo() {
@@ -33,8 +36,14 @@ public class PessoaFisica extends Pessoa {
 	public void setRg(String rg) {
 		this.rg = rg;
 	}
-	
-	
+
+	public Date getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
 	
 	
 }
